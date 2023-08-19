@@ -17,6 +17,7 @@
 
     <modules>
         <module>security-client</module>
+        <module>authorization-server</module>
     </modules>
 
 </project>
