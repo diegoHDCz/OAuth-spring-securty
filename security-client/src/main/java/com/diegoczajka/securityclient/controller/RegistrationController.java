@@ -72,6 +72,19 @@ public class RegistrationController {
         }
     }
 
+    @PostMapping("/changePassword")
+    public String changePassword(@RequestBody PasswordModel passwordModel){
+        User user = userService.findUserByEmail(passwordModel.getEmail());
+        if(!userService.checkIfValidOldPassword(user,passwordModel.getOldPassword())){
+            return "Invalid Old Password";
+        }
+
+        userService.changePassword(user,passwordModel.getNewPassword());
+        return "Password Changed Successfully!";
+
+
+    }
+
     @GetMapping("/resendVerifyToken")
     public String resendVerificationToken(
             @RequestParam("token") String oldToken, HttpServletRequest request) {
