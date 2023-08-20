@@ -9,12 +9,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="security-client" />
         <module name="authorization-server" />
+        <module name="oauth-resource" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="authorization-server" options="-parameters" />
+      <module name="oauth-resource" options="-parameters" />
       <module name="security-client" options="-parameters" />
     </option>
   </component>
